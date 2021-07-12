@@ -2,9 +2,9 @@ function Scan-Ports
 {
 <#
 .EXAMPLE
-    .\Scan-Ports.ps1 -Dest 10.10.10.100 -StartPort 1000 -EndPort 2000 -timeout 50 -parallel 500
+    Scan-Ports -Dest 10.10.10.100 -StartPort 1000 -EndPort 2000 -timeout 50 -parallel 500
 .EXAMPLE
-    .\Scan-Ports.ps1 10.10.10.100 1000 2000 50 500
+    Scan-Ports 10.10.10.100 1000 2000 50 500
 #>
 
     [CmdletBinding()]
