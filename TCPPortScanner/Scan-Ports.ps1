@@ -1,20 +1,20 @@
 <#
 .EXAMPLE
-    Scan-Ports -Dest 10.10.10.100 -StartPort 1000 -EndPort 2000 -timeout 500 -parralel 25
+    .\Scan-Ports.ps1 -Dest 10.10.10.100 -StartPort 1000 -EndPort 2000 -timeout 50 -parralel 500
 .EXAMPLE
-    Scan-Ports 10.10.10.100 1000 2000 500 25
+    .\Scan-Ports.ps1 10.10.10.100 1000 2000 50 500
 #>
 
     [CmdletBinding()]
 	Param(
         # Destination to scan - hostname ot IP. Default localhost.
-		    [string]$Dest      = 'localhost',
+	    [string]$Dest      = 'localhost',
 
         # Start Port. Default 1.
             [ValidateRange(1,65535)]
-		    [int]$StartPort = 1,
+	    [int]$StartPort = 1,
 
-        # Start Port. Default 65535.
+        # End Port. Default 65535.
             [ValidateRange(1,65535)]
             [ValidateScript({
                 if($_ -lt $StartPort)
@@ -26,11 +26,11 @@
                     return $true
                 }
             })]
-		    [int]$EndPort   = 65535,
+	    [int]$EndPort   = 65535,
 
         # Timeout in miliseconds. Default 100.
             [ValidateRange(1,2000)]
-    		[int]$timeout   = 100,
+    	    [int]$timeout   = 100,
 
         # Parralel tests. Default 250.
 		    [int]$parallel  = 250
