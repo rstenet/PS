@@ -73,7 +73,7 @@ function Scan-Ports
 	$cnt = 0
 
 	while($EndPort -ge $cce -And $cce -ge $ccs ){
-		Write-Host "`r Scanning ports:  $ccs - $cce" –NoNewline
+		Write-Host "`r Scanning ports:  $ccs - $cce" -NoNewline
 		$ccs..$cce | % {
 			$PowerShell = [powershell]::Create()
 			$PowerShell.RunspacePool = $RunspacePool 
@@ -89,7 +89,7 @@ function Scan-Ports
 		0..($List.Count-1) | % {
 			if( $List[$_].PowerShell.EndInvoke($List[$_].Handle) -eq 'opened' ) { 
 				Write-Host "`r  $($List[$_].Id)                        " 
-                Write-Host "`r Scanning ports:  $ccs - $cce" –NoNewline
+                Write-Host "`r Scanning ports:  $ccs - $cce" -NoNewline
 				$cnt++
 			}
             $List[$_].PowerShell = $null
