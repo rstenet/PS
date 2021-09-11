@@ -8,7 +8,7 @@ There are other PS scripts pretending to be fast and to some extend they are, co
 
 If all the ports are open this will be fast, too. But normally the example above will run for more than half an hour, because of the 2 seconds default timeout of TcpClient.Connect.
 
-To overcome this some like [securethelogs/PSpanner](https://github.com/securethelogs/PSpanner) are using timeouts. Others are like [BornToBeRoot/PowerShell_IPv4PortScanner](https://github.com/BornToBeRoot/PowerShell_IPv4PortScanner) are using multithreading.
+To overcome this some like [securethelogs/PSpanner](https://github.com/securethelogs/PSpanner) are using timeouts. Others like [BornToBeRoot/PowerShell_IPv4PortScanner](https://github.com/BornToBeRoot/PowerShell_IPv4PortScanner) are using multithreading.
 
 Here both techniques are combined.  
 Additional to that the RunspacePool jobs are created and checked in chunks equal to the parallelism chosen. This minimizes the RAM used.
