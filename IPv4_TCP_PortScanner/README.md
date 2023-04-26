@@ -26,7 +26,7 @@ Scan-Ports [[-Dest] <String>] [[-StartPort] <Int32>] [[-EndPort] <Int32>] [[-tim
 ###### Get the function
 
 ```PowerShell
-PS: > iex(New-Object Net.WebClient).DownloadString(‘https://raw.githubusercontent.com/rstenet/PS/main/IPv4_TCP_PortScanner/Scan-Ports.ps1’)
+iex(New-Object Net.WebClient).DownloadString(‘https://raw.githubusercontent.com/rstenet/PS/main/IPv4_TCP_PortScanner/Scan-Ports.ps1’)
 ```
 
 ###### Run it
